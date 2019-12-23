@@ -28,7 +28,7 @@ RUN apk add --update npm
 
 ## install json server
 ##RUN npm install
-RUN npm install -g json-server
+##RUN npm install -g json-server
 
 ## Copy our default nginx config
 COPY nginx/default.conf /etc/nginx/conf.d/
