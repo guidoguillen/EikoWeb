@@ -24,7 +24,7 @@ RUN npm run ng build
 FROM nginx:1.14.1-alpine
 
 ##install npm
-apk add --update npm
+RUN apk add --update npm
 
 ## install json server
 ##RUN npm install
