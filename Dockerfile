@@ -13,6 +13,11 @@ WORKDIR /ng-app
 
 COPY . .
 
+## install npm dependencies
+RUN npm install
+##RUN npm install -g json-server
+
+
 ## Build the angular app in production mode and store the artifacts in dist folder
 
 RUN npm run ng build -- --output-path=dist
@@ -30,5 +35,8 @@ RUN rm -rf /usr/share/nginx/html/*
 
 ## From ‘builder’ stage copy over the artifacts in dist folder to default nginx public folder
 COPY --from=builder /ng-app/dist /usr/share/nginx/html
+
+## Start in memmory db
+RUN json-server --watch db.json --port 50255
 
 CMD ["nginx", "-g", "daemon off;"]
