@@ -10,22 +10,25 @@ COPY package.json package-lock.json ./
 
 RUN npm ci && mkdir /ng-app && mv ./node_modules ./ng-app
 
-## install npm dependencies
-##RUN npm install
-RUN npm install -g json-server
-
 WORKDIR /ng-app
 
 COPY . .
 
 ## Build the angular app in production mode and store the artifacts in dist folder
 
-RUN npm run ng build -- --output-path=dist
+RUN npm run ng build
 
 
 ### STAGE 2: Setup ###
 
 FROM nginx:1.14.1-alpine
+
+##install npm
+apk add --update npm
+
+## install json server
+##RUN npm install
+RUN npm install -g json-server
 
 ## Copy our default nginx config
 COPY nginx/default.conf /etc/nginx/conf.d/
