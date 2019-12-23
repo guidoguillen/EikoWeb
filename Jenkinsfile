@@ -1,7 +1,12 @@
 pipeline {
     agent any
     stages {
-        
+        stage('0 Build') {
+            steps {
+                bat 'docker stop test'
+				bat 'docker rn test'             
+            }
+        }
 		stage('1 Build') {
             steps {
                 bat 'docker build -t appdev .'  
