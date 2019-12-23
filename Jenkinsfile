@@ -10,7 +10,7 @@ pipeline {
 		stage('1 Build') {
             steps {
                 bat 'docker build -t appdev .'  
-				bat 'docker run -d --name test --network="host" appdev'
+				bat 'docker run -d --network host --name test appdev'
             }
         }
     }
