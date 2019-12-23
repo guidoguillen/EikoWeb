@@ -4,7 +4,7 @@ pipeline {
         stage('0 Build') {
             steps {
                 bat 'docker stop test'
-				bat 'docker rn test'             
+				bat 'docker rm test'             
             }
         }
 		stage('1 Build') {
