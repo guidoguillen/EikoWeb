@@ -23,7 +23,7 @@ export class EmployeeComponent implements OnInit {
       form.resetForm();
     
       this.service.formData = {
-      EmployeeID : null,
+      id : null,
       FullName : '',
       Position : '',
       EMPCode : '',
@@ -32,7 +32,7 @@ export class EmployeeComponent implements OnInit {
   }
 
   onSubmit(form: NgForm){
-    if(form.value.EmployeeID == null)
+    if(form.value.id == null)
       this.insertRecord(form);
     else
       this.updateRecord(form); 

@@ -1,0 +1,32 @@
+{
+  "employee": [
+    {
+      "id": 1,
+      "FullName": "Guido Guillen",
+      "EMPCode": "USER-01",
+      "Mobile": "70341067",
+      "Position": "Developer"
+    },
+    {
+      "id": 2,
+      "FullName": "Karen Mendoza",
+      "EMPCode": "USER-02",
+      "Mobile": "78945689",
+      "Position": "Tester"
+    },
+    {
+      "id": 3,
+      "FullName": "Boris Dominguez",
+      "EMPCode": "USER-03",
+      "Mobile": "79456987",
+      "Position": "Developer"
+    },
+    {
+      "id": 4,
+      "FullName": "Marcelo Claure",
+      "EMPCode": "USER-04",
+      "Mobile": "12584684",
+      "Position": "Senior DBA"
+    }
+  ]
+}

@@ -12,7 +12,7 @@ export class EmployeeService {
   formData : Employee;
   list : Employee[];
 
-  readonly rootURL = "http://localhost:50255/api"
+  readonly rootURL = "http://localhost:50255"
   constructor(private http : HttpClient) { }
 
   postEmployee(formData : Employee){
@@ -20,7 +20,7 @@ export class EmployeeService {
   }
 
   putEmployee(formData : Employee){
-    return this.http.put(this.rootURL+'/Employee/'+formData.EmployeeID,formData);
+    return this.http.put(this.rootURL+'/Employee/'+formData.id,formData);
   }
 
   deleteEmployee(id: number){
