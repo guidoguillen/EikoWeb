@@ -16,7 +16,7 @@ COPY . .
 
 ## Build the angular app in production mode and store the artifacts in dist folder
 
-RUN ng build
+RUN "ng build"
 
 
 ### STAGE 2: Setup ###
