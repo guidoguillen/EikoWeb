@@ -1,9 +1,16 @@
 pipeline {
-    agent { dockerfile true }
+    agent { any }
     stages {
-        stage('Test') {
+        stage('0 Build') {
             steps {
-                sh 'echo "Hello world"'                
+                sh 'docker stop appdev'
+				sh 'docker rn appdev'             
+            }
+        }
+		stage('1 Build') {
+            steps {
+                sh 'docker build -t appdev .'  
+				sh 'docker run -d --name test -p 8082:80 appdev'
             }
         }
     }
