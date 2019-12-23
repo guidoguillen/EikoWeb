@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('0 Cleanup') {
             steps {
-                bat 'docker stop test'
+                bat 'docker stop test' 
 				bat 'docker rm test'             
             }
         }
