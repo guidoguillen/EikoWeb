@@ -15,7 +15,7 @@ pipeline {
 		stage('2 Start container and db') {
             steps {
 				bat 'docker run -d -p 8082:80 --name test appdev'
-				bat 'docker exec test json-server --watch db.json --port 50255 > logs.log &'
+				//bat 'docker exec test json-server --watch db.json --port 50255'
             }
         }
     }
