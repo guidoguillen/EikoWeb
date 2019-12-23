@@ -1,20 +1,16 @@
 pipeline {
     agent any
-
     stages {
-        stage('Build') {
+        stage('0 Build') {
             steps {
-                echo 'Building..'
+                bat 'docker stop appdev'
+				bat 'docker rn appdev'             
             }
         }
-        stage('Test') {
+		stage('1 Build') {
             steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+                bat 'docker build -t appdev .'  
+				bat 'docker run -d --name test -p 8082:80 appdev'
             }
         }
     }
